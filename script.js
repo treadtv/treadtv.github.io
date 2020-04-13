@@ -190,9 +190,11 @@ window.onclick = function(event) {
     if(seconds == 5){
     y.play();
     x.play();
+    clicked = true;
     }
     else {
     x.play();
+    clicked = true;
     }
     }
     if (rest==true && clicked == false && started!=false){
@@ -200,9 +202,11 @@ window.onclick = function(event) {
     interval = setInterval(countdownSeconds, 1000);  if(seconds == 5){
     y.play();
     x.play(); 
+    clicked = true;
     }
     else {
     x.play();
+    clicked = true;
     }
     }
   }
