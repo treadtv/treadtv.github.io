@@ -162,9 +162,11 @@ span.onclick = function() {
     if(seconds == 5){
     y.play();
     x.play();
+    clicked = true;
     }
     else {
     x.play();
+    clicked = true;
     }
     }
     if (rest==true && clicked == false && started!=false){
@@ -173,9 +175,11 @@ span.onclick = function() {
     if(seconds == 5){
     y.play();
     x.play();
+    clicked = true;
     }
     else {
     x.play();
+    clicked = true;
     }
     }
 }
