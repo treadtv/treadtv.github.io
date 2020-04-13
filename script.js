@@ -67,7 +67,7 @@ var started = false;
       rest = true;
       position +=1;
       changeToRest();
-      if (position == list.length - 1){
+      if (position == list.length){
       theEnd();
       }
     } else if (seconds == 0 && rest == true) {
@@ -75,7 +75,7 @@ var started = false;
       seconds = intervalTime + 1;
       rest = false;
       changeToGo();
-      if (position == list.length - 1){
+      if (position == list.length){
       theEnd();
       }
     }
