@@ -36,12 +36,13 @@ var started = false;
     if(position==0){
         started = true;
     }
+    console.log(clicked,interval);
     if (clicked == false ){
     changeToGo();
     interval = setInterval(countdownSeconds, 1000);
-    x.play();
-    }
+    x.play();   
     clicked = true;
+    }
   }
 
   pauseButton.onclick = function() {
@@ -155,10 +156,13 @@ btnx.addEventListener('click', function() {
  
 
 span.onclick = function() {
-  modal.style.display = "none";
+    modal.style.display = "none";
+    
     if (rest==false && clicked == false && started!=false){
+    console.log(clicked,interval);
+    clearInterval(interval);
     changeToGo();
-    interval = setInterval(countdownSeconds, 1000); 
+    interval = setInterval(countdownSeconds, 1000);
     if(seconds == 5){
     y.play();
     x.play();
@@ -170,11 +174,12 @@ span.onclick = function() {
     }
     }
     if (rest==true && clicked == false && started!=false){
-    changeToRest();
-    interval = setInterval(countdownSeconds, 1000);
-    if(seconds == 5){
+    console.log(clicked,interval);
+    changeToRest();    
+    clearInterval(interval);
+    interval = setInterval(countdownSeconds, 1000);  if(seconds == 5){
     y.play();
-    x.play();
+    x.play(); 
     clicked = true;
     }
     else {
