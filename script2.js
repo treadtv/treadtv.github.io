@@ -5,7 +5,7 @@ window.onload = function() {
   var interval;
   var timeElapsed = 0;
 var clicked = false;
-var position  = 0;
+var position  = 12;
 var x = document.getElementById("myAudio"); 
 var y = document.getElementById("beep"); 
 var started = false;
@@ -67,7 +67,11 @@ var started = false;
 
   function checkForStateChange() {
     if (seconds == 0 && rest == false) {
-      seconds = breakTime + 1;
+      if(position<12){
+      seconds = breakTime + 1;}
+      else {
+      seconds = 31;
+      }
       rest = true;
       position +=1;
       if(position<13){
