@@ -1,7 +1,7 @@
 window.onload = function() {
 
-  var seconds = 40;
-  var rest = true;
+  var seconds = 30;
+  var rest = false;
   var interval;
   var timeElapsed = 0;
 var clicked = false;
@@ -11,12 +11,12 @@ var y = document.getElementById("beep");
 var started = false;
 
 
-  var intervalTime = 40;
+  var intervalTime = 30;
   var breakTime = 10;
   var list = ["Jumping Jacks", "Wall Sit", "Push Ups","Crunches","Chair Step Ups","Squats","Triceps Dips","Plank", "High Knees","Lunges","Push Up Rotations","Side Plank"];
   var wList = ["1. Jumping Jacks", "<br>2. Wall Sit", "<br>3. Push Ups","<br>4. Crunches","<br>5. Chair Step Ups","<br>6. Squats","<br>7. Triceps Dips","<br>8. Plank", "<br>9. High Knees","<br>10. Lunges","<br>11. Push Up Rotations","<br>12. Side Plank"];    
-  var links = ["workouts//jumping_jack.gif","workouts//wall_sit.gif","workouts//pushup.gif","workouts//crunches.gif","workouts//chair_step_up.gif","workouts//squat.gif","workouts//tricep_dips.gif","workouts//plank.gif","workouts//high_knees.gif","workouts//lunges.gif","workouts//pushup_rotation.gif","workouts//side_plank.gif",
-              ];
+  var links = ["workouts//jumping_jack.gif","workouts//wall_sit.gif","workouts//pushup.gif","workouts//crunches.gif","workouts//chair_step_up.gif","workouts//squat.gif","workouts//tricep_dips.gif","workouts//plank.gif","workouts//high_knees.gif","workouts//lunges.gif","workouts//pushup_rotation.gif","workouts//side_plank.gif"];
+
  var linkSRC = document.getElementById("help");
 
   var startButton = document.getElementById("start");
@@ -32,13 +32,17 @@ var started = false;
 
 
   startButton.onclick = function() {
-    rest = false;
     if(position==0){
         started = true;
     }
     console.log(clicked,interval);
     if (clicked == false ){
+    if(rest==true){
+    changeToRest();
+    console.log("gooo");}
+    else {
     changeToGo();
+    }
     interval = setInterval(countdownSeconds, 1000);
     x.play();   
     clicked = true;
@@ -48,8 +52,8 @@ var started = false;
   pauseButton.onclick = function() {
     clicked = false;
     x.pause();
+    y.pause();
     clearInterval(interval);
-    
   }
   
   function countdownSeconds() {
@@ -66,6 +70,7 @@ var started = false;
     if (seconds == 0 && rest == false) {
       seconds = breakTime + 1;
       rest = true;
+      console.log(rest,"is Rest");
       position +=1;
       changeToRest();
       if (position == list.length){
@@ -128,14 +133,19 @@ console.log("hi");
   var compString = completed.join(' ');
   workList.innerHTML = compString;
   if(position%2==0 && rest==false){
-  min.innerText =position/2 +' : ' + (intervalTime-seconds);}
+  min.innerText ='0'+position/2 +' : ' + (intervalTime-seconds);}
  
   if(position%2!=0 && rest==false){
-  min.innerText =floor(position/2) +' : ' + (intervalTime-seconds);
+  console.log("summary",position,intervalTime,seconds);
+  if(Math.floor(position/2)==0){
+  min.innerText ='0'+0+' : ' + ((position+1)*intervalTime-seconds);}
+  else {
+  min.innerText ='0'+Math.floor(position/2)+' : ' + (intervalTime-seconds);
+  }
   cal.innerText = (position*30+30-seconds)*12/60;}
 
   if(position%2==0 && rest==true){
-  min.innerText =position/2 +' : ' + 0;
+  min.innerText ='0'+position/2 +' : ' + '00';
   cal.innerText = (position*30)*12/60;}
     
   if(position%2!=0 && rest==true){
