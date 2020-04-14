@@ -69,14 +69,18 @@ var started = false;
     if (seconds == 0 && rest == false) {
       seconds = breakTime + 1;
       rest = true;
-      console.log(rest,"is Rest");
       position +=1;
-      changeToRest();
+      if(position<13){
+      changeToRest();    
+      }
+    else{
+        changeToGo();
+        rest = false;
+    }
       if (position == list.length){
       theEnd();
       }
     } else if (seconds == 0 && rest == true) {
-      console.log(seconds,rest,"Hi");
       seconds = intervalTime + 1;
       rest = false;
       changeToGo();
@@ -96,6 +100,9 @@ var started = false;
     $("body").css("background", "pink");
     statusHeader.innerText = list[position];
     linkSRC.src = links[position];
+    if(position>12){
+    $("body").css("background", "AliceBlue");
+    }
   }
     
 var modal = document.getElementById("myModal");
@@ -166,7 +173,7 @@ btnx.addEventListener('click', function() {
 
 span.onclick = function() {
     modal.style.display = "none";
-    
+    console.log(rest,clicked,started);
     if (rest==false && clicked == false && started!=false){
     console.log(clicked,interval);
     clearInterval(interval);
@@ -186,7 +193,8 @@ span.onclick = function() {
     console.log(clicked,interval);
     changeToRest();    
     clearInterval(interval);
-    interval = setInterval(countdownSeconds, 1000);  if(seconds == 5){
+    interval = setInterval(countdownSeconds, 1000);  
+    if(seconds == 5){
     y.play();
     x.play(); 
     clicked = true;
