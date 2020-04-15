@@ -5,15 +5,57 @@ window.onload = function() {
   var interval;
   var timeElapsed = 0;
 var clicked = false;
-var position  = 12;
+var position  = 0;
 var x = document.getElementById("myAudio"); 
 var y = document.getElementById("beep"); 
 var started = false;
   var intervalTime = 40;
-  var breakTime = 10;
-  var list = ["Arm-Circles","Forward Lunges","Shuffles","High Knees + Punchouts","Plank","Side Lunges","Knee Crunches","Ice Skaters","Sumo Squats","Mountain Climbers","Bear Crawl Squats","Crossover-Crunch","Bicycle-Crunch","Quadricep Crunch","Hamstring Stretch","Ab Stretch","Calves Stretch"];
-  var wList = ["1. Arm-Circles", "<br>2. Forward Lunges", "<br>3. Shuffles","<br>4. High Knees + Punchouts","<br>5. Plank","<br>6. Side Lunges","<br>7. Knee Crunches","<br>8. Ice Skaters", "<br>9. Sumo Squats","<br>10. Mountain Climbers","<br>11. Bear Crawl Squats","<br>12. Crossover-Crunch","<br>13. Bicycle-Crunch","<br>14. Quadricep Crunch","<br>15. Hamstring Stretch","<br>16. Ab Stretch","<br>17. Calves Stretch"];    
-  var links = ["workouts//Arm_Circles.gif","workouts//Forward_Lunges.gif","workouts//Shuffles.gif","workouts//HighKnees_Punchouts.gif","workouts//forwardplank.gif","workouts//side_lunges_gif.gif","workouts//Knee_Crunches.gif","workouts//Ice_Skaters.gif","workouts//SumoSquats.gif","workouts//Mountain_Climber.gif","workouts//Bear_Crawl_Squats.gif","workouts//Cross_Over_Crunch.gif","workouts//Bicycle_Crunch.gif","workouts//Quadricep_Stretch.gif","workouts//Hamstring_Stretch.gif","workouts//Ab_Stretch.gif","workouts//Calves_Stretch.gif",];
+  var breakTime = 10; 
+  var list = ["Standing Criss-Cross Crunch",
+"Right Oblique Crunch",
+"Left Oblique Crunch",
+"six inch crunch hold",
+"Plank",
+"Bicycle Crunch",
+"Flutter Kicks",
+"Scissor Kicks",
+"Plank Jacks",
+"Plank with Hip Dips",
+"Supermans",
+"Mountain Climbers",
+"Reverse Plank",
+"Cobra Stretch"];
+  var wList = ["1. Standing Criss-Cross Crunch",
+"<br>2. Right Oblique Crunch",
+"<br>3. Left Oblique Crunch",
+"<br>4. 6 inch crunch hold",
+"<br>5. Plank",
+"<br>6. Bicycle Crunch",
+"<br>7. Flutter Kicks",
+"<br>8. Scissor Kicks",
+"<br>9. Plank Jacks",
+"<br>10. Plank with Hip Dips",
+"<br>11. Supermans",
+"<br>12. Mountain Climbers",
+"<br>13. Reverse Plank",
+"<br>14. Cobra Stretch"];
+
+
+  var links = ["workouts//standing_criss_cross_crunch.gif",
+"workouts//Right_Oblique_Crunch.gif",
+"workouts//Left_Oblique_Crunch.gif",
+"workouts//6inch_crunch_hold.gif",
+"workouts//plank.gif",
+"workouts//Bicycle_crunch.gif",
+"workouts//flutter_kicks.gif",
+"workouts//scissor_kicks.gif",
+"workouts//Plank_Jacks.gif",
+"workouts//Plank_sidedips.gif",
+"workouts//Supermans.gif",
+"workouts//Mountain_climber.gif",
+"workouts//Reverse_Plank.gif",
+"workouts//Cobra_Stretch.gif",];
+
 
 
  var linkSRC = document.getElementById("help");
