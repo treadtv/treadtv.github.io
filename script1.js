@@ -91,6 +91,7 @@ var y = document.getElementById("beep");
 
   var startButton = document.getElementById("start");
   var pauseButton = document.getElementById("pause");
+  var nextHeader = document.getElementById("next");
   
   var completeButton = document.getElementById("complete");
   
@@ -161,6 +162,7 @@ var y = document.getElementById("beep");
     console.log(position,rPosition,restList[rPosition]);
     $("body").css("background", "cyan");
     statusHeader.innerText = "Rest";
+    nextHeader.innerText = "UP NEXT : "+ list[position+1];
     linkSRC.src = "workouts//rest.gif";
   }
 
@@ -170,6 +172,7 @@ var y = document.getElementById("beep");
     $("body").css("background", "blue");
     }
     statusHeader.innerText = list[position];
+    nextHeader.innerText = "UP NEXT : "+ list[position+1];
     linkSRC.src = links[position];
   }
     
