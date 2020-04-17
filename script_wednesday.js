@@ -11,106 +11,71 @@ window.onload = function() {
     var started = false;
     var intervalTime = 15;
     var breakTime = 10;
-    var list = ["Oblique Stretch",
-    "Jumping Jacks",
-    "Prisoner Squat",
-    "Inchworm to pushup",
-    "Jump Squat",
-    "Lunge Pulses left leg forward",
-    "Alternating Lunges",
-    "Split Jumps",
-    "Burpees",
-    "Lunge Pulses for same right leg forward",
-    "Alternating Lunges",
-    "Split Jumps",
-    "Burpees",
-    "Shoulder Taps + Pushup",
-    "Tricep Dips",
-    "In and Out Abs",
-    "Straight Leg Raises",
-    "Left Quad + Hamstring Stretch",
-    "Right Quad + Hamstring Stretch",
-    "Downward Dog to Cobra"];
-    var wList = ["1. Oblique Stretch",
-    "<br>2. Jumping Jacks",
-    "<br>3. Prisoner Squat",
-    "<br>4. Inchworm to pushup",
-    "<br>5. Jump Squat",
-    "<br>6. Lunge Pulses left leg forward",
-    "<br>7. Alternating Lunges",
-    "<br>8. Split Jumps",
-    "<br>9. Burpees",
-    "<br>10. Lunge Pulses for same right leg forward",
-    "<br>11. Alternating Lunges",
-    "<br>12. Split Jumps",
-    "<br>13. Burpees",
-    "<br>14. Shoulder Taps + Pushup",
-    "<br>15. Tricep Dips",
-    "<br>16. In and Out Abs",
-    "<br>17. Straight Leg Raises",
-    "<br>18. Left Quad + Hamstring Stretch",
-    "<br>19. Right Quad + Hamstring Stretch",
-    "<br>20. Downward Dog to Cobra"];  
-    var dList = [15,
-  30,
-  30,
-  30,
-  20,
-  30,
-  30,
-  20,
-  15,
-  30,
-  30,
-  20,
-  15,
-  30,
-  30,
-  30,
-  30,
-  15,
-  15,
-  15];
-    var restList = [2,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  1,
-  2,
-  2,
-  2];
-    var links = ["workouts//Oblique_Stretch.gif",
-    "workouts//Jumping_Jacks.gif",
-    "workouts//Prisoner_squats.gif",
-    "workouts//Inchworm_Pushup.gif",
-    "workouts//Jump_Squats.gif",
-    "workouts//Lunge_Pulses_left.gif",
-    "workouts//Alternating_Lunges.gif",
-    "workouts//Split_Jumps.gif",
+    var list = ["Seal Jacks",
+"Pushups",
+"Reverse Lunges",
+"Glute Bridges",
+"Jumping Jacks",
+"Supermans",
+"Mountain Climbers",
+"Close Squats",
+"Planks",
+"Burpees",
+"Left Leg Stretch",
+"Left Leg Stretch",
+"Cat Cow Stretch"];
+    var wList = ["1. Seal Jacks",
+"<br>2. Pushups",
+"<br>3. Reverse Lunges",
+"<br>4. Glute Bridges",
+"<br>5. Jumping Jacks",
+"<br>6. Supermans",
+"<br>7. Mountain Climbers",
+"<br>8. Close Squats",
+"<br>9. Planks",
+"<br>10. Burpees",
+"<br>11. Left Leg Stretch",
+"<br>12. Left Leg Stretch",
+"<br>13. Cat Cow Stretch"];  
+    var dList = [10,
+10,
+10,
+10,
+10,
+10,
+10,
+10,
+10,
+30,
+30,
+30,
+30];
+    var restList = [1,
+1,
+1,
+1,
+1,
+1,
+1,
+0,
+0,
+2,
+2,
+2,
+2];
+    var links = ["workouts//seal_jacks.gif",
+    "workouts//knee_pushup.gif",
+    "workouts//reverse_lunges.gif",
+    "workouts//glute_bridges.gif",
+    "workouts//jumping_jacks.gif",
+    "workouts//supermans.gif",
+    "workouts//mountain_climbers.gif",
+    "workouts//close_squats.gif",
+    "workouts//plank.gif",
     "workouts//Burpees.gif",
-    "workouts//Lunge_Pulses_right.gif",
-    "workouts//Alternating_Lunges.gif",
-    "workouts//Split_Jumps.gif",
-    "workouts//Burpees.gif",
-    "workouts//Shouldertap_Pushup.gif",
-    "workouts//Tricep_Dips.gif",
-    "workouts//In_and_Outs.gif",
-    "workouts//Leg_Raises.gif",
-    "workouts//Leg_Stretch_Left.gif",
-    "workouts//Leg_Stretch_Right.gif",
-    "workouts//Downwarddog_Cobra.gif",
+    "workouts//Left_Lower_body_Stretch.gif",
+    "workouts//Right_Lower_body_Stretch.gif",
+    "workouts//cat_cow_stretch.gif",
                 ];
   
     var linkSRC = document.getElementById("help");
@@ -119,53 +84,35 @@ window.onload = function() {
     var completeButton = document.getElementById("complete");
     
     var workList = document.getElementById("worklist");
+  var nextHeader = document.getElementById("next");
   
     var statusHeader = document.getElementById("status");
     var secondsSpan = document.getElementById("sec");
   
     startButton.onclick = function() {
-      
-      if(position==0)
-      {
+    if(position==0 && started == false){
+        started = true;
+        seconds =dList[position];
         rest = false;
-      } 
-      if(position==0 && started == false){
-        console.log("2")
-          started = true;
-          seconds =dList[position];
-      }
-      if(clicked == false && rest == true && position>0){
-        console.log("staying at rest")
-      changeToRest();
-      interval = setInterval(countdownSeconds, 1000);
-      x.play();  
-      clicked = true;
-      }
-      if(clicked == false && rest == false && position>0)
-      {
-        console.log("changing to go")
-        changeToGo();
-        interval = setInterval(countdownSeconds, 1000);
-        x.play();  
-        clicked = true;
-
-      }
-      if(clicked == false && rest == false && position==0)
-      {
-        console.log("changing to go")
-        changeToGo();
-        interval = setInterval(countdownSeconds, 1000);
-        x.play();  
-        clicked = true;
-
-      }
+    } 
+    if (clicked == false ){
+    if(rest==true){
+    changeToRest();
+    console.log("gooo");}
+    else {
+    console.log(rest,"noo");
+    changeToGo();
     }
+    interval = setInterval(countdownSeconds, 1000);
+    x.play();   
+    clicked = true;
+    }
+  }
   
     pauseButton.onclick = function() {
       clicked = false;
-      console.log("Hi, I paused","seconds=",seconds,"rest=",rest,"clicked=",clicked,"pos=",rPosition);
       x.pause();
-      //y.pause();
+      y.pause();
       clearInterval(interval);
     }
     
@@ -173,7 +120,7 @@ window.onload = function() {
       //console.log("countdown",seconds,rest,clicked,rPosition);
       seconds -= 1;
       secondsSpan.innerText = seconds;
-      if (seconds == 5){
+      if (seconds <= 5){
           y.play();
       }
       checkForStateChange();
@@ -188,13 +135,13 @@ window.onload = function() {
             console.log("yolo in here now");
             rest = true;
             seconds = breakTime+1;
-            rPosition = rPosition + 1;
+            rPosition = rPosition +1;
             changeToRest();}
         if(rest==false){
         position = position+1;
         seconds = dList[position]+1;
-        changeToGo();
-        rPosition = rPosition +1; }
+        changeToGo(); 
+        rPosition = rPosition +1;}
         }
        
       if(rest == true && seconds ==0){
@@ -207,18 +154,26 @@ window.onload = function() {
     }
   
     function changeToRest() {
-      console.log(position,rPosition,restList[rPosition]);
+      console.log(position,rPosition,restList[rPosition],"rest");
       $("body").css("background", "cyan");
       statusHeader.innerText = "Rest";
+      nextHeader.innerText = "UP NEXT : "+ list[position+1];
       linkSRC.src = "workouts//rest.gif";
     }
   
     function changeToGo() {
-      $("body").css("background", "orange");
+      $("body").css("background", "pink");
       if(restList[rPosition]==2){
-      $("body").css("background", "white");
+      $("body").css("background", "orange");
       }
+    console.log(rPosition,links[position],position,restList[rPosition]);
       statusHeader.innerText = list[position];
+      if(restList[rPosition] != 1){
+      nextHeader.innerText = "UP NEXT : "+ list[position+1];
+      }
+      else {
+          nextHeader.innerText = "UP NEXT : REST";
+      }
       linkSRC.src = links[position];
     }
       
@@ -245,7 +200,7 @@ window.onload = function() {
   var btnx = document.getElementById("complete");
   var min = document.getElementById("min");
   var cal = document.getElementById("cal");
-  
+
   // Get the <span> element that closes the modal
   var spanx = document.getElementsByClassName("close")[1];
   var secondsDone= 0;
