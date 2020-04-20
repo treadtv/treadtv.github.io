@@ -136,6 +136,7 @@ x.onended = function(){
     
 var minute,second;
     function countdownSeconds() {
+        seconds = seconds - 1;
         minute = parseInt(seconds / 60, 10);
         second = parseInt(seconds % 60, 10);
 
@@ -143,13 +144,10 @@ var minute,second;
         second = second < 10 ? "0" + second : second;
 
         secondsSpan.textContent = minute + ":" + second;
-
-        if (--seconds < 0) {
-            seconds = duration;
-        }
           if (seconds <= 5){
           y.play();
       }
+        console.log(seconds);
       checkForStateChange();}
 
       
@@ -181,6 +179,8 @@ var minute,second;
     }
   
     function changeToRest() {
+     
+            seconds = breakTime;
       console.log(position,rPosition,restList[rPosition],"rest");
       $("body").css("background", "cyan");
       statusHeader.innerText = "Rest";
