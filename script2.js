@@ -59,6 +59,8 @@ var started = false;
 
 
  var linkSRC = document.getElementById("help");
+    
+ var controls = document.getElementsByClassName("controls");
 
   var startButton = document.getElementById("start");
   var pauseButton = document.getElementById("pause");
@@ -154,19 +156,12 @@ var started = false;
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("what");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-  clicked = false;
-  x.pause();
-  y.pause();
-  clearInterval(interval); 
-}
+
  
 var modalx = document.getElementById("completed");
 

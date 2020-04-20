@@ -65,11 +65,11 @@ window.onload = function() {
 2];
     var links = ["workouts//seal_jacks.gif",
     "workouts//knee_pushup.gif",
-    "workouts//reverse_lunges.gif",
-    "workouts//glute_bridges.gif",
-    "workouts//jumping_jacks.gif",
-    "workouts//supermans.gif",
-    "workouts//mountain_climbers.gif",
+    "workouts//Reverse_Lunges.gif",
+    "workouts//Glute_Bridges.gif",
+    "workouts//Jumping_Jacks.gif",
+    "workouts//Supermans.gif",
+    "workouts//Mountain_Climber.gif",
     "workouts//close_squats.gif",
     "workouts//plank.gif",
     "workouts//Burpees.gif",
@@ -79,6 +79,10 @@ window.onload = function() {
                 ];
   
     var linkSRC = document.getElementById("help");
+    
+    
+ var controls = document.getElementsByClassName("controls");
+
     var startButton = document.getElementById("start");
     var pauseButton = document.getElementById("pause");
     var completeButton = document.getElementById("complete");
@@ -94,6 +98,7 @@ window.onload = function() {
         started = true;
         seconds =dList[position];
         rest = false;
+        controls[0].style.display = "none";
     } 
     if (clicked == false ){
     if(rest==true){
@@ -158,7 +163,7 @@ window.onload = function() {
       $("body").css("background", "cyan");
       statusHeader.innerText = "Rest";
       nextHeader.innerText = "UP NEXT : "+ list[position+1];
-      linkSRC.src = "workouts//rest.gif";
+      linkSRC.src = "workouts//rest_2.gif";
     }
   
     function changeToGo() {
@@ -180,20 +185,12 @@ window.onload = function() {
   var modal = document.getElementById("myModal");
   
   // Get the button that opens the modal
-  var btn = document.getElementById("what");
   
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
   
   // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-    modal.style.display = "block";
-    clicked = false;
-    x.pause();
-    y.pause();
-    clearInterval(interval); 
-  }
-   
+
   var modalx = document.getElementById("completed");
   
   // Get the button that opens the modal
