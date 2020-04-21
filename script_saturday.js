@@ -57,9 +57,9 @@ window.onload = function() {
     "<br>22.Cobra",
     "<br>23.Childs Stretch"];
     
-    var dList = [60,
-      30,
-      30,
+    var dList = [10,
+      10,
+      10,
       15,
       30,
       30,
@@ -223,8 +223,7 @@ var minute,second;
     }
   
     function changeToRest() {
-     
-            seconds = breakTime;
+     seconds = breakTime;
       console.log(position,rPosition,restList[rPosition],"rest");
       $("body").css("background", "cyan");
       statusHeader.innerText = "Rest";
@@ -237,9 +236,9 @@ var minute,second;
       if(restList[rPosition]==2){
       $("body").css("background", "orange");
       }
-    console.log(rPosition,links[position],position,restList[rPosition]);
+ console.log(rPosition,links[position],position,restList[rPosition]);
       statusHeader.innerText = list[position];
-      if(restList[rPosition] != 1){
+      if(restList[rPosition+1] != 1){
       nextHeader.innerText = "UP NEXT : "+ list[position+1];
       }
       else {
