@@ -57,7 +57,7 @@ window.onload = function() {
     "<br>22.Cobra",
     "<br>23.Childs Stretch"];
     
-    var dList = [60,
+    var dList = [10,
       30,
       30,
       15,
@@ -80,8 +80,8 @@ window.onload = function() {
       30,
       30,
       30];
-    var restList = [0,
-      0,
+    var restList = [1,
+      1,
       0,
       1,
       0,
@@ -159,7 +159,6 @@ x.onended = function(){
     } 
     if (clicked == false ){
     if(rest==true){
-    changeToRest();
     console.log("gooo");}
     else {
     console.log(rest,"noo");
