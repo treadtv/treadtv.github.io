@@ -57,7 +57,7 @@ window.onload = function() {
     "<br>22.Cobra",
     "<br>23.Childs Stretch"];
     
-    var dList = [10,
+    var dList = [60,
       30,
       30,
       15,
@@ -80,8 +80,8 @@ window.onload = function() {
       30,
       30,
       30];
-    var restList = [1,
-      1,
+    var restList = [0,
+      0,
       0,
       1,
       0,
