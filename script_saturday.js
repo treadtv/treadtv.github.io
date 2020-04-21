@@ -271,7 +271,7 @@ var restDone = 0;
   function theEnd() {
   console.log("hi");
     clearInterval(interval); 
-    var completed = wList.slice(0,position/8+1);
+    var completed = wList.slice(0,position+1);
     var compString = completed.join(' ');
     workList.innerHTML = compString;
     
