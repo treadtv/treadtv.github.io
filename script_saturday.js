@@ -15,7 +15,7 @@ window.onload = function() {
 "Right Leg Swing",
 "Left Leg Swing",
 "Plank Rows",
-"V Situps",
+"V Situps : 15 reps",
 "Burpees : 15 reps",
 "Dive Bomber : 15 reps",
 "Superman : 15 reps",
@@ -111,19 +111,19 @@ window.onload = function() {
     "workouts//v_situps.gif",
     "workouts//burpee.gif",
     "workouts//divebomber.gif",
-    "workouts//supermans.gif",
+    "workouts//superman.gif",
     "workouts//squat_jumps.gif",
     "workouts//steam_engines.gif",
     "workouts//v_situps.gif",
     "workouts//burpee.gif",
     "workouts//divebomber.gif",
-    "workouts//supermans.gif",
+    "workouts//superman.gif",
     "workouts//squat_jumps.gif",
     "workouts//steam_engines.gif",
     "workouts//v_situps.gif",
     "workouts//burpee.gif",
     "workouts//divebomber.gif",
-    "workouts//supermans.gif",
+    "workouts//superman.gif",
     "workouts//squat_jumps.gif",
     "workouts//steam_engines.gif"
                 ];
@@ -194,7 +194,7 @@ var minute,second;
       
   
     function checkForStateChange() {
-      if (position == list.length - 1){
+      if (position == list.length){
           print("kahtam");
       theEnd();}
         
