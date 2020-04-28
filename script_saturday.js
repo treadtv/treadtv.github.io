@@ -9,7 +9,7 @@ window.onload = function() {
   var x = document.getElementById("myAudio"); 
   var y = document.getElementById("beep"); 
     var started = false;
-    var breakTime = 1;
+    var breakTime = 10;
       var list = ["Butt Kicks",
 "Squat Jacks",
 "Right Leg Swing",
