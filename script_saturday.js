@@ -9,138 +9,123 @@ window.onload = function() {
   var x = document.getElementById("myAudio"); 
   var y = document.getElementById("beep"); 
     var started = false;
-    var breakTime = 10;
-      var list = ["Jumping Jacks",
-"Squat Jumps",
-"Burpees",
-"Right Leg Lunge Hop",
-"Left Leg Lunge Hop",
-"Jumping Jacks",
-"Squat Jumps",
-"Burpees",
-"Right Leg Lunge Hop",
-"Left Leg Lunge Hop",
-"Walk Out + Pushup",
-"Shoulder Taps",
-"Diamond Pushups",
-"Tricep Dips",
-"Walk Out + Pushup",
-"Shoulder Taps",
-"Diamond Pushups",
-"Tricep Dips",
-"Commandos",
-"Spider Plank",
-"Plank Jacks",
-"Cross  Body Mountain Climbers",
-"Commandos",
-"Spider Plank",
-"Plank Jacks",
-"Cross  Body Mountain Climbers"];
-    var wList = ["1. Jumping Jacks",
-"<br>2. Squat Jumps",
-"<br>3. Burpees",
-"<br>4. Right Leg Lunge Hop",
-"<br>5. Left Leg Lunge Hop",
-"<br>6. Jumping Jacks",
-"<br>7. Squat Jumps",
-"<br>8. Burpees",
-"<br>9. Right Leg Lunge Hop",
-"<br>10. Left Leg Lunge Hop",
-"<br>11. Walk Out + Pushup",
-"<br>12. Shoulder Taps",
-"<br>13. Diamond Pushups",
-"<br>14. Tricep Dips",
-"<br>15. Walk Out + Pushup",
-"<br>16. Shoulder Taps",
-"<br>17. Diamond Pushups",
-"<br>18. Tricep Dips",
-"<br>19. Commandos",
-"<br>20. Spider Plank",
-"<br>21. Plank Jacks",
-"<br>22. Cross Body Mountain Climbers",
-"<br>23. Commandos",
-"<br>24. Spider Plank",
-"<br>25. Plank Jacks",
-"<br>26. Cross Body Mountain Climbers"];  
-    var dList = [20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20,
-20];
+    var breakTime = 1;
+      var list = ["Butt Kicks",
+"Squat Jacks",
+"Right Leg Swing",
+"Left Leg Swing",
+"Plank Rows",
+"V Situps",
+"Burpees : 15 reps",
+"Dive Bomber : 15 reps",
+"Superman : 15 reps",
+"Squat Jump : 15 reps",
+"Steam Engines : 15 reps",
+"V Situps : 15 reps",
+"Burpees : 15 reps",
+"Dive Bomber : 15 reps",
+"Superman : 15 reps",
+"Squat Jump : 15 reps",
+"Steam Engines : 15 reps",
+"V Situps : 15 reps",
+"Burpees : 15 reps",
+"Dive Bomber : 15 reps",
+"Superman : 15 reps",
+"Squat Jump : 15 reps",
+"Steam Engines : 15 reps"];
+    var wList = ["1. Butt Kicks",
+"<br>2. Squat Jacks",
+"<br>3. Right Leg Swing",
+"<br>4. Left Leg Swing",
+"<br>5. Plank Rows",
+"<br>6. V Situps",
+"<br>7. Burpees",
+"<br>8. Dive Bomber",
+"<br>9. Superman",
+"<br>10. Squat Jump",
+"<br>11. Steam Engines",
+"<br>12. V Situps",
+"<br>13. Burpees",
+"<br>14. Dive Bomber",
+"<br>15. Superman",
+"<br>16. Squat Jump",
+"<br>17. Steam Engines",
+"<br>18. V Situps",
+"<br>19. Burpees",
+"<br>20.Dive Bomber",
+"<br>21.Superman",
+"<br>22.Squat Jump",
+"<br>23.Steam Engines"];  
+    var dList = [30,
+30,
+30,
+30,
+30,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60,
+60];
     var restList = [1,
 1,
 1,
 1,
 1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1,
-1];
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0];
     var links = [
-    "workouts//Jumping_Jacks.gif",
+    "workouts//butt_kicks.gif",
+    "workouts//squat_jacks.gif",
+    "workouts//right_leg_swing.gif",
+    "workouts//left_leg_swing.gif",
+    "workouts//plank_rows.gif",
+    "workouts//v_situps.gif",
+    "workouts//burpee.gif",
+    "workouts//divebomber.gif",
+    "workouts//supermans.gif",
     "workouts//squat_jumps.gif",
-    "workouts//Burpees.gif",
-    "workouts//right_leg_lunge_hops.gif",
-    "workouts//left_leg_lunge_hops.gif",
-    "workouts//Jumping_Jacks.gif",
+    "workouts//steam_engines.gif",
+    "workouts//v_situps.gif",
+    "workouts//burpee.gif",
+    "workouts//divebomber.gif",
+    "workouts//supermans.gif",
     "workouts//squat_jumps.gif",
-    "workouts//Burpees.gif",
-    "workouts//right_leg_lunge_hops.gif",
-    "workouts//left_leg_lunge_hops.gif",
-    "workouts//walkout_pushup.gif",
-    "workouts//Shouldertap_Pushup.gif",
-    "workouts//diamond_pushups.gif",
-    "workouts//tricep_dips.gif",
-    "workouts//walkout_pushup.gif",
-    "workouts//Shouldertap_Pushup.gif",
-    "workouts//diamond_pushups.gif",
-    "workouts//tricep_dips.gif",
-    "workouts//commandos.gif",
-    "workouts//spider_plank.gif",
-    "workouts//Plank_Jacks.gif",
-    "workouts//cross_body_mountain_climbers.gif",
-    "workouts//commandos.gif",
-    "workouts//spider_plank.gif",
-    "workouts//Plank_Jacks.gif",
-    "workouts//cross_body_mountain_climbers.gif"
+    "workouts//steam_engines.gif",
+    "workouts//v_situps.gif",
+    "workouts//burpee.gif",
+    "workouts//divebomber.gif",
+    "workouts//supermans.gif",
+    "workouts//squat_jumps.gif",
+    "workouts//steam_engines.gif"
                 ];
     var linkSRC = document.getElementById("help");
     
@@ -209,19 +194,20 @@ var minute,second;
       
   
     function checkForStateChange() {
-      if (position == list.length){
+      if (position == list.length - 1){
+          print("kahtam");
       theEnd();}
         
       if (seconds == 0 && rest == false) {
         if (restList[rPosition] == 1){
             console.log("yolo in here now");
             rest = true;
-            seconds = breakTime+1;
+            seconds = breakTime;
             rPosition = rPosition +1;
             changeToRest();}
         if(rest==false){
         position = position+1;
-        seconds = dList[position];
+        seconds = dList[position]+1;
         changeToGo(); 
         rPosition = rPosition +1;}
         }
@@ -286,7 +272,6 @@ var restDone = 0;
     clearInterval(interval); 
     var completed = wList.slice(0,position+1);
     var compString = completed.join(' ');
-    workList.innerHTML = compString;
     
   console.log(position,"length");
     for (i = 0; i < position+1; i++) {
@@ -297,19 +282,20 @@ var restDone = 0;
     secondsDone += dList[i]+restList[i]*breakTime;
     calSeconds += dList[i];
   }
+      console.log(secondsDone,calSeconds,seconds,restList[i]*breakTime);
       if(rest == true){
       secondsDone = secondsDone - seconds;}
       else{
-      secondsDone = secondsDone - seconds-restList[i]*breakTime;  
+      secondsDone = secondsDone - seconds;  
       }
       console.log(secondsDone,parseInt(secondsDone/60));
       calSeconds = calSeconds - seconds;
-  min.innerText = parseInt(secondsDone/60)+":"+(secondsDone%60);
-  cal.innerText = calSeconds*12/60;
-    clicked = false;
-    modalx.style.display = "block";
-    x.pause();
-    y.pause();
+      min.innerText = parseInt(secondsDone/60)+":"+(secondsDone%60);
+      cal.innerText = calSeconds*12/60;
+      clicked = false;
+      modalx.style.display = "block";
+      x.pause();
+      y.pause();
   }    
   
   // When the user clicks the button, open the modal 
