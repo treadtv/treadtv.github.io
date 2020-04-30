@@ -31,8 +31,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="app">
-    <p class="controls">FULL BODY EMOM CIRCUIT</p>
-    <a href="https://www.instagram.com/treadhill/"><h2 id="status">@treadhill</a> for daily workouts</h2>
+      <p class="controls">Arm and Ab Workout </a></p>
+    <a href="https://www.instagram.com/treadhill/"><h2 id="status">@treadhill</a> x <a href="https://www.instagram.com/vasuki_manoharan/">@Vasuki</a></h2>
     <p class="large"><span id="sec"></span></p>
 <img id="help" src="intro.gif" alt="Well Folks, this gif is not loading" width="80%" height="50%">
  
@@ -46,7 +46,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="controls" id="next">UP NEXT : 
     </p>
 <audio id="myAudio">
-  <source src="wed_backup.mp3" type="audio/mpeg">
+  <source src="thursday_music.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
       
@@ -75,11 +75,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Visit <a href ="https://bit.ly/treadhill">bit.ly/treadhill</a> for daily workouts <br><br>
       You worked out for <span id="min"></span> minutes.<br>
     You burned approx. <span id="cal"></span> calories<br><br>
-       FULL BODY EMOM CIRCUIT
+       Arm and Ab Workout
         <div id ="worklist">
       </div>
         <br>
-      <button id="screenshot" onclick="wholePage()">Take Screenshot</button>
       </p>
   </div>
 
@@ -89,22 +88,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="script_saturday.js"></script>
-    <script>
-function wholePage()
-{
-  html2canvas(document.body, {
-      onrendered: function(canvas)  
-      {
-        var img = canvas.toDataURL();
-        $("#result-image").attr('src', img).show();
-
-        canvas.toBlob(function(blob) {
-          saveAs(blob, "wholePage.png");
-        });
-      }
-  });
-  return false;
-}
-</script>
+ 
 </body>
 </html>
